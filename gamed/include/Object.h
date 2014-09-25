@@ -51,6 +51,8 @@ protected:
     */
 	Target* target;
 
+	virtual void OnCollision(Object *a_Collider) { }
+
    std::vector<MovementVector> waypoints;
    uint32 curWaypoint;
    Map* map;

@@ -32,6 +32,8 @@ protected:
    int curConstWaypoint;
 
 public:
+	
+   void onCollision(Object *collider);
    Minion(Map* map, uint32 id, MinionSpawnType type, MinionSpawnPosition position, const std::vector<MovementVector>& constWaypoints = std::vector<MovementVector>());
    uint32 getPosition() const { return position; }
    uint32 getType() const { return type; }

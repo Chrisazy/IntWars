@@ -1,14 +1,14 @@
 players = {
 	["player1"] = {
-		["rank"] = "DIAMOND",
-		["name"] = "Test",
+		["rank"] = "CHALLENGER",
+		["name"] = "Holland",
 		["champion"] = "Ezreal",
-		["team"] = "BLUE", -- BLUE or PURPLE
-		["skin"] = 0,
+		["team"] = "PURPLE", -- BLUE or PURPLE
+		["skin"] = 5,
 		["summoner1"] = "HEAL",
 		["summoner2"] = "FLASH",
 		["ribbon"] = 2, -- [ 1 = Leader (Yellow) ]	[ 2 = Mentor (Blue) ]	[ 4 = Cooperative (Green) ]
-		["icon"] = 0 -- Summoner Icon ID
+		["icon"] = 45 -- Summoner Icon ID
 	},
    
 	--[[, -- uncomment this for more players! you can also add more, up to 12!

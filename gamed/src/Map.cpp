@@ -1,5 +1,12 @@
 #include "Map.h"
 #include "Game.h"
+#include "CollisionHandler.h"
+
+Map::Map(Game* game, uint64 firstSpawnTime, uint64 spawnInterval) : game(game), waveNumber(0), firstSpawnTime(firstSpawnTime), spawnInterval(spawnInterval), gameTime(0), nextSpawnTime(firstSpawnTime), firstBlood(true) 
+{ 
+	collisionHandler = new CollisionHandler();
+	collisionHandler->setMap(this);
+}
 
 void Map::update(int64 diff) {
    for(auto kv = objects.begin(); kv != objects.end();) {
@@ -14,7 +21,7 @@ void Map::update(int64 diff) {
          kv->second->clearMovementUpdated();
       }
       
-      Unit* u = dynamic_cast<Unit*>(kv->second);
+	  Unit* u = dynamic_cast<Unit*>(kv->second);
 
       if(!u) {
          kv->second->update(diff);
@@ -71,6 +78,7 @@ void Map::update(int64 diff) {
       spawn();
       ++waveNumber;
    }
+   collisionHandler->update(diff);
 }
 
 Object* Map::getObjectById(uint32 id) {
